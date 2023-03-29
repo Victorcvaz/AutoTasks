@@ -6,16 +6,16 @@ def cards(runs):
     
     # Não executar a tarefa
     if runs == 0:
+        print(f"{routes.time()} Pulamos cartas")
         return
+
+    print(f"{routes.time()} Iniciando Cartas")
 
     # Movendo até reinos
     routes.Maps.kingdom_window()
 
     # Movendo até cartas
-    sleep(5)
-    pyautogui.moveTo(x=2149, y=1321)
-    sleep(3)
-    pyautogui.click()
+    routes.coordvalidation(x=760, y=473)
 
     # Movendo até go
     routes.Maps.go_button()
@@ -24,10 +24,7 @@ def cards(runs):
     for c in range(0,runs):
 
         # Movendo até Desafio
-        sleep(5)
-        pyautogui.moveTo(x=2064, y=1916)
-        sleep(3)
-        pyautogui.click()
+        routes.coordvalidation(x=737, y=678)
             
         # Movendo até forçar entrada
         routes.Maps.forcar_entrada()
@@ -36,30 +33,19 @@ def cards(runs):
         sleep(120)
     
     # Abrindo tela de cartas pesadelo
-    sleep(5)
-    pyautogui.moveTo(x=353, y=205)
-    sleep(3)
-    pyautogui.click()
+    routes.coordvalidation(x=130, y=78)
     
     # Recolhedo recompensa de cartas pesadelo
-    sleep(5)
-    pyautogui.moveTo(x=259, y=1943)
-    sleep(5)
-    pyautogui.click()
-    
+    routes.coordvalidation(x=89, y=681)
+
     # removendo a tela de recompensa antes de clicar
     sleep(5)
     pyautogui.click()
 
     # Fechando a tela de cartas
-    sleep(5)
-    pyautogui.moveTo(x=3668, y=141)
-    sleep(3)
-    pyautogui.click()
-    sleep(5)
+    routes.coordvalidation(x=1300, y=55)
     
     # removendo a tela de recompensa antes de clicar
-    sleep(5)
-    pyautogui.moveTo(x=259, y=1943)
-    sleep(5)
-    pyautogui.click()
+    routes.coordvalidation(x=282, y=735)
+
+    print(f"{routes.time()} Terminamos Cartas")

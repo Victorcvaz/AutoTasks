@@ -3,16 +3,20 @@ from time import sleep
 import routes
 
 def equips(runs):
+
+    if runs == 0:
+        print(f"{routes.time()} Pulamos Equipamentos")
+        return
+
+    print(f"{routes.time()} Iniciando Equipamentos")
+
     for c in range(0,runs):
         
         # Movendo até reinos
         routes.Maps.kingdom_window()
 
         # Movendo até equips
-        sleep(5)
-        pyautogui.moveTo(x=2387, y=858)
-        sleep(3)
-        pyautogui.click()
+        routes.coordvalidation(x=842, y=302)
 
         # Movendo até go
         routes.Maps.go_button()
@@ -21,29 +25,17 @@ def equips(runs):
 
         # Movendo até o equips anterior após 3 iterações
         if c > 2 and c < 6:
-            sleep(5)
-            pyautogui.moveTo(x=961, y=1444)
-            sleep(3)
-            pyautogui.click()
+            routes.coordvalidation(x=355, y=517)
         
         # Movendo até o equips anterior após 6 iterações
         if c > 5:
-            sleep(5)
-            pyautogui.moveTo(x=956, y=1107)
-            sleep(3)
-            pyautogui.click()
+            routes.coordvalidation(x=349, y=394)
             
         # Movendo até o modo pesadelo
-        sleep(5)
-        pyautogui.moveTo(x=2524, y=1150)
-        sleep(3)
-        pyautogui.click()
+        routes.coordvalidation(x=891, y=412)
 
         # Movendo até Desafio
-        sleep(5)
-        pyautogui.moveTo(x=2957, y=1916)
-        sleep(3)
-        pyautogui.click()
+        routes.coordvalidation(x=1036, y=676)
 
         # Movendo até forçar entrada
         routes.Maps.forcar_entrada()
@@ -51,4 +43,5 @@ def equips(runs):
         # Aguardando a próxima run
         sleep(170)
         
+    print(f"{routes.time()} Terminamos Equipamentos")
 

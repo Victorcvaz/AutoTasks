@@ -7,7 +7,10 @@ def ruins(runs):
     
     # Não executar a tarefa
     if runs == 0:
+        print(f"{routes.time()} Pulamos Ruínas")
         return
+
+    print(f"{routes.time()} Iniciando Ruínas")
 
     # Abrindo até o mapa atual
     routes.Maps.current_map()
@@ -16,16 +19,10 @@ def ruins(runs):
     routes.Maps.global_map()
 
     # Abrindo o mapa das ruínas
-    sleep(5)
-    pyautogui.moveTo(x=3296, y=1202)
-    sleep(3)
-    pyautogui.click()
+    routes.coordvalidation(x=1176, y=453)
 
     # Movendo até o spot
-    sleep(5)
-    pyautogui.moveTo(x=2618, y=864)
-    sleep(3)
-    pyautogui.click()
+    routes.coordvalidation(x=1013, y=426)
     sleep(45)
 
     # Inicianto auto-ataque
@@ -38,15 +35,15 @@ def ruins(runs):
     sleep(360)
 
     # Movendo até a recompensa
-    sleep(5)
-    pyautogui.moveTo(x=301, y=749)
-    sleep(3)
-    pyautogui.click()
+    routes.coordvalidation(x=91, y=257)
+    routes.Fight.team_summon()
     sleep(20)
 
-    # Coletando a recompensa
-    sleep(5)
-    pyautogui.moveTo(x=3544, y=118)
-    sleep(3)
-    pyautogui.click()
-    sleep(5)
+    # Fechando a tela de recompensa
+    routes.coordvalidation(x=909, y=380)
+    sleep(20)
+
+    # Fechando a tela de informações
+
+    
+    print(f"{routes.time()} Terminamos Ruínas")

@@ -5,20 +5,20 @@ import routes
 
 def dragon(runs):
 
-    # Não executar a tarfe
+    # Não executar a tarefa
     if runs == 0:
+        print(f"{routes.time()} Pulamos Dragão")
         return
-    
+
+    print(f"{routes.time()} Iniciando Dragão")
+
     for c in range(0,runs):
 
         # Movendo até reinos
         routes.Maps.kingdom_window()
 
         # Movendo até dragon
-        sleep(5)
-        pyautogui.moveTo(x=3094, y=1070)
-        sleep(3)
-        pyautogui.click()
+        routes.coordvalidation(x=1087, y=388)
 
         # Movendo até go
         routes.Maps.go_button()
@@ -26,13 +26,12 @@ def dragon(runs):
             sleep(20)
 
         # Movendo até Desafio
-        sleep(5)
-        pyautogui.moveTo(x=2437, y=1869)
-        sleep(3)
-        pyautogui.click()
+        routes.coordvalidation(x=865, y=666)
 
         # Movendo até forçar entrada
         routes.Maps.forcar_entrada()
 
         # Aguardando a próxima run
-        sleep(130)      
+        sleep(145)  
+            
+    print(f"{routes.time()} Terminamos Dragão")
